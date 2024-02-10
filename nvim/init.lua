@@ -376,7 +376,7 @@ require("oil").setup({
   lsp_rename_autosave = true,
   view_options = {
     -- Show files and directories that start with "."
-    show_hidden = false,
+    show_hidden = true,
     -- This function defines what is considered a "hidden" file
     is_hidden_file = function(name, bufnr)
       return vim.startswith(name, ".")
@@ -627,13 +627,9 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+  rust_analyzer = {},
+  ruff_lsp = {},
+  marksman = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
