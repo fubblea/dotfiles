@@ -199,7 +199,23 @@ require('lazy').setup({
       end,
     },
   },
-
+  {
+    'saecki/crates.nvim',
+    tag = 'stable',
+    config = function()
+      require('crates').setup()
+    end,
+  },
+  {
+    'ggandor/leap.nvim',
+    init = function()
+      require("leap").add_default_mappings()
+    end,
+    dependencies = {
+      "tpope/vim-repeat",
+    },
+    lazy = false,
+  },
   {
     'stevearc/oil.nvim',
     opts = {},
