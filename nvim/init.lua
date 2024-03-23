@@ -90,6 +90,7 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
+  { "nvim-neotest/nvim-nio" },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -195,7 +196,7 @@ require('lazy').setup({
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-  { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -224,7 +225,7 @@ require('lazy').setup({
     opts = {} -- this is equalent to setup({}) function
   },
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',  opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
