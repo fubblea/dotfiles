@@ -1,3 +1,4 @@
+require("core")
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -350,7 +351,9 @@ require("oil").setup({
     "mtime",
   },
   delete_to_trash = true,
-  lsp_rename_autosave = true,
+  lsp_file_methods = {
+    autosave_changes = true
+  },
   view_options = {
     -- Show files and directories that start with "."
     show_hidden = true,
@@ -370,6 +373,8 @@ require("oil").setup({
     },
   },
 })
+
+vim.keymap.set('n', '<leader>o', "<cmd>O<cr>", { desc = 'Open oil.nvim' })
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -587,6 +592,7 @@ require('which-key').register {
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
   ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+  ['<leader>o'] = { name = '[O]il', _ = 'which_key_ignore' },
 }
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
