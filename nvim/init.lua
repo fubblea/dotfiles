@@ -616,7 +616,6 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   rust_analyzer = {},
-  ruff_lsp = {},
   yamlls = {},
   marksman = {},
   lua_ls = {
@@ -627,6 +626,7 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+ pyright = {},
 }
 
 -- Setup theme
