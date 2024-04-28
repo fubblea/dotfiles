@@ -627,7 +627,6 @@ local servers = {
     },
   },
   pyright = {},
-  ruff = {},
 }
 
 require('lspconfig').pyright.setup {
