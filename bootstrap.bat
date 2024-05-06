@@ -1,1 +1,1 @@
-cmd.exe mklink /J "~\AppData\Local\nvim" "$(pwd)\dotfiles\nvim"
+cmd.exe mklink /J "~\AppData\Local\" "$(pwd)\config\*"

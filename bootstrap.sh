@@ -1,7 +1,5 @@
 # NOTE RUN FROM REPO ROOT
 
-# Setup nvim
-ln -s $(pwd)/nvim ${HOME}/.config/nvim
+# Setup .config
+ln -s $(pwd)/config/* ${HOME}/.config/
 
-# Setup zellij
-ln -s $(pwd)/zellij ${HOME}/.config/zellij
