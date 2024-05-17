@@ -8,7 +8,6 @@ ln -s $(pwd)/.tmux.conf ${HOME}/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Setup zsh
-curl -L git.io/antigen > ${HOME}/antigen.zsh
 ln -s $(pwd)/.zshrc ${HOME}/.zshrc
 
 sudo apt update -y
