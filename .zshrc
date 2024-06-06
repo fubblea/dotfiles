@@ -83,7 +83,6 @@ alias la='ls -A'
 alias vim='nvim'
 alias c='clear'
 alias lg="lazygit"
-alias pip="uv pip"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # Shell integrations
