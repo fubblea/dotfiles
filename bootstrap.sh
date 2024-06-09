@@ -24,7 +24,7 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 install lazygit /usr/local/bin
 
-apt install zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 rm -rf /opt/nvim
