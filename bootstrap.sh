@@ -3,14 +3,17 @@
 # Setup .config
 ln -s $(pwd)/config/* ${HOME}/.config/
 
+apt update -y
+
 # Setup tmux
+apt install tmux -y
 ln -s $(pwd)/.tmux.conf ${HOME}/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Setup zsh
+apt install zsh -y
+chsh -s $(which zsh)
 ln -s $(pwd)/.zshrc ${HOME}/.zshrc
-
-apt update -y
 
 # Setup other utilities
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
