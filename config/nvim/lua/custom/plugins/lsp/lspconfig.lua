@@ -128,6 +128,16 @@ return {
                 callSnippet = "Replace",
               },
             },
+            ["rust-analyzer"] = {
+              procMacro = {
+                ignored = {
+                  leptos_macro = {
+                    "component",
+                    "server",
+                  },
+                },
+              },
+            },
           },
         })
       end,
