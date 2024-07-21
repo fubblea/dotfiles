@@ -33,7 +33,24 @@ install lazygit /usr/local/bin
 # Install zoxide
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
+# Install astro and deps
+
 # Install nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
+
+# Install treesitter cli
+cargo install tree-sitter-cli
+
+# Install ripgrep
+apt-get install ripgrep
+
+# Install gdu
+curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
+chmod +x gdu_linux_amd64
+mv gdu_linux_amd64 /usr/bin/gdu
+
+# Install bottom
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
+dpkg -i bottom_0.9.6_amd64.deb
