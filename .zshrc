@@ -88,7 +88,7 @@ alias la='ls -A'
 alias vim='nvim'
 alias c='clear'
 alias lg="lazygit"
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim/"
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
