@@ -24,6 +24,7 @@ return {
       dashboard.button("SPC sf", "󰱼 > Find File", "<cmd>Telescope find_files<CR>"),
       dashboard.button("SPC sg", " > Find Word", "<cmd>Telescope live_grep<CR>"),
       dashboard.button("SPC lg", "~ > Lazy Git", "<cmd>LazyGit<CR>"),
+      dashboard.button("SPC wr", "󰁯 > Restore Session", "<cmd>SessionLoad<CR>"),
       dashboard.button("q", " > Quit NVIM", "<cmd>qa<CR>"),
     }
 
