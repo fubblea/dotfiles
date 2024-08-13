@@ -21,6 +21,7 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("e", " > New File", "<cmd>ene<CR>"),
       dashboard.button("\\", " > Toggle file explorer", "<cmd>Neotree<CR>"),
+      dashboard.button("SPC o", " > Open Oil.nvim", "<cmd>O<CR>"),
       dashboard.button("SPC sf", "󰱼 > Find File", "<cmd>Telescope find_files<CR>"),
       dashboard.button("SPC sg", " > Find Word", "<cmd>Telescope live_grep<CR>"),
       dashboard.button("SPC lg", "~ > Lazy Git", "<cmd>LazyGit<CR>"),

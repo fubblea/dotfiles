@@ -86,6 +86,9 @@ vim.keymap.set(
   { desc = "View [I]nlay Hints" }
 )
 
+-- Open Oil.nvim
+vim.keymap.set("n", "<leader>o", "<cmd>O<CR>", { desc = "Open [O]il.nvim" })
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
