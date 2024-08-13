@@ -207,7 +207,9 @@ require("lazy").setup({
         { "<leader>s", group = "[S]earch" },
         { "<leader>w", group = "[W]orkspace" },
         { "<leader>t", group = "[T]oggle" },
-        { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+        { "<leader>x", group = "Trouble" },
+        { "<leader>h", group = "[H]arpoon" },
+        { "<leader>g", group = "[G]it Hunk", mode = { "n", "v" } },
       })
     end,
   },
