@@ -636,6 +636,8 @@ require("lazy").setup({
         },
       },
       "saadparwaiz1/cmp_luasnip",
+      "lukas-reineke/cmp-under-comparator",
+      "SergioRibera/cmp-dotenv",
 
       -- Adds other completion capabilities.
       --  nvim-cmp does not ship with all sources by default. They are split
