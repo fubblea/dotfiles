@@ -89,9 +89,6 @@ vim.keymap.set(
 -- Open Oil.nvim
 vim.keymap.set("n", "<leader>o", "<cmd>O<CR>", { desc = "Open [O]il.nvim" })
 
--- Diagnostic keymaps
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
-
 -- Terminal Commands
 vim.keymap.set("n", "<C-\\>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
