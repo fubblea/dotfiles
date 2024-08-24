@@ -496,20 +496,38 @@ require("lazy").setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                typeCheckingMode = "off",
+                diagnosticMode = "workspace",
+                diagnosticSeverityOverrides = {
+                  reportUnusedImport = "none",
+                  reportUnusedClass = "none",
+                  reportUnusedFunction = "none",
+                  reportUnusedVariable = "none",
+                },
+              },
+            },
+          },
+        },
         rust_analyzer = {
-          ["rust-analyzer"] = {
-            -- Add clippy lints for Rust.
-            checkOnSave = {
-              allFeatures = true,
-              command = "clippy",
-              extraArgs = {
-                "--",
-                "--no-deps",
-                "-Dclippy::correctness",
-                "-Dclippy::complexity",
-                "-Wclippy::perf",
-                "-Wclippy::pedantic",
+          settings = {
+            rust_analyzer = {
+              -- Add clippy lints for Rust.
+              checkOnSave = {
+                allFeatures = true,
+                command = "clippy",
+                extraArgs = {
+                  "--",
+                  "--no-deps",
+                  "-Dclippy::correctness",
+                  "-Dclippy::complexity",
+                  "-Wclippy::perf",
+                  "-Wclippy::pedantic",
+                },
               },
             },
           },
