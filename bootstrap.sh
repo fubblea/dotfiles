@@ -2,9 +2,11 @@
 
 # Setup .config
 mkdir ${HOME}/.config/
-ln -s $(pwd)/config/* ${HOME}/.config/
 
 apt update -y
+
+# Install dependencies
+apt install curl wget git-all -y
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -39,4 +41,4 @@ wget https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar
 tar xzvf nvim-linux64.tar.gz
 mv nvim-linux64/bin/nvim /usr/local/bin/nvim
 rm nvim-linux64.tar.gz
-
+ln -s $(pwd)/config/nvim ${HOME}/.config/nvim
