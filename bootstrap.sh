@@ -1,6 +1,7 @@
 # NOTE RUN FROM REPO ROOT
 
 # Setup .config
+mkdir ${HOME}/.config/
 ln -s $(pwd)/config/* ${HOME}/.config/
 
 apt update -y
