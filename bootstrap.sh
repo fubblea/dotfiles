@@ -35,9 +35,9 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 
 # Install nvim
 apt install libfuse2
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-mkdir -p /opt/nvim
+wget https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz
+tar xzvf nvim-linux64.tar.gz
+sudo ln -s "${INSTALL_DIR}nvim-linux64/bin/nvim" /usr/local/bin/nvim
 mv nvim.appimage /opt/nvim/nvim
 echo 'export PATH="$PATH:/opt/nvim/"' >> ~/.bashrc
 echo 'export PATH="$PATH:/opt/nvim/"' >> ~/.zshrc
