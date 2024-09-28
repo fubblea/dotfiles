@@ -3,8 +3,7 @@ shell="pwsh"
 [window]
 decorations = "Buttonless"
 
-opacity = 0.8
-blur = true
+opacity = 1
 
 option_as_alt = "Both"
 
