@@ -5,6 +5,9 @@
 # Theme
 export ZSH_THEME=robbyrussell
 
+# bins
+export PATH=$PATH:"$HOME/.local/bin"
+
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -89,6 +92,7 @@ alias vim='nvim'
 alias c='clear'
 alias lg="lazygit"
 export PATH="$PATH:/opt/nvim/"
+export PATH="$PATH:/opt/nvim-linux64/bin/"
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -105,3 +109,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # tailwindcss
 export PATH=$PATH:~/.tailwindcss/bin
+
