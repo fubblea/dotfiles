@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -88,7 +90,7 @@ export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/opt/nvim-linux64/bin/"
 
 # Shell integrations
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
 # Cargo
