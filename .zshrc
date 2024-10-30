@@ -91,7 +91,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin/"
 
 # Shell integrations
 source <(fzf --zsh)
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Cargo
 . "$HOME/.cargo/env"
