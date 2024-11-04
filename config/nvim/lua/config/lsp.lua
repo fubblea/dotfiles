@@ -1,3 +1,4 @@
+
 -- Reserve a space in the gutter
 -- This will avoid an annoying layout shift in the screen
 vim.opt.signcolumn = 'yes'
@@ -15,6 +16,7 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
 -- if there is a language server active in the file
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
+
   callback = function(event)
     local opts = {buffer = event.buf}
 
@@ -48,8 +50,8 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     -- Navigate between completion items
-    ['<C-p>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
-    ['<C-n>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+    ['<Tab>'] = cmp.mapping.select_next_item({behavior = 'select'}),
 
     -- `Enter` key to confirm completion
     ['<CR>'] = cmp.mapping.confirm({select = false}),
@@ -61,9 +63,12 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
+
   snippet = {
     expand = function(args)
       vim.snippet.expand(args.body)
     end,
   },
 })
+
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
