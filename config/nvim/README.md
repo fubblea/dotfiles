@@ -1,4 +1,5 @@
 # Nvim
+print("Hello")
 
 ## Setup
 
