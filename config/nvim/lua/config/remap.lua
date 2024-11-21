@@ -12,6 +12,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = "[U]ndo Tree" })
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "[P]aste To Void" })
 
@@ -23,6 +25,8 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d", { desc = "[D]elete To Void" })
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat Buffer" })
+
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace Word" })
 
 -- Terminal Commands
 vim.keymap.set("n", "<C-\\>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
