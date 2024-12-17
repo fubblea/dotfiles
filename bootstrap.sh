@@ -37,7 +37,7 @@ install lazygit /usr/local/bin
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 # Install nvim
-wget https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz
+wget https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
 tar xzvf nvim-linux64.tar.gz
 mv nvim-linux64/bin/nvim /usr/local/bin/nvim
 rm nvim-linux64.tar.gz
