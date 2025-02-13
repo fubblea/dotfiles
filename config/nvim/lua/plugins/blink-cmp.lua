@@ -17,7 +17,17 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = "enter" },
+    keymap = {
+      preset = "enter",
+
+      -- Keybind overrides
+
+      ["<Tab>"] = { "select_next", "fallback" },
+      ["<S-Tab>"] = { "select_prev", "fallback" },
+
+      ["<C-p>"] = { "snippet_backward", "fallback" },
+      ["<C-n>"] = { "snippet_forward", "fallback" },
+    },
 
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
