@@ -48,7 +48,7 @@ return {
     completion = {
       list = { selection = { preselect = false, auto_insert = false } },
       menu = { auto_show = true },
-      ghost_text = { enabled = false },
+      ghost_text = { enabled = true },
     },
   },
   opts_extend = { "sources.default" },
