@@ -3,7 +3,7 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons", "folke/snacks.nvim" },
 
-    init = function()
+    config = function()
       local curr_lsp = function()
         local msg = "No Active Lsp"
         local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
