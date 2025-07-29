@@ -19,7 +19,7 @@
     "edit_prediction_provider": "copilot"
   },
   "agent": {
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4.1"

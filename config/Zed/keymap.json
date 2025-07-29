@@ -31,5 +31,12 @@
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePreviousItem"
     }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "ctrl-shift-j": ["editor::SelectNext", { "replace_newest": false }], // editor.action.addSelectionToNextFindMatch
+      "ctrl-shift-k": ["editor::SelectPrevious", { "replace_newest": false }] // editor.action.addSelectionToPreviousFindMatch
+    }
   }
 ]
