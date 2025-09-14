@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 		end
 
-		map("<leader>f", function()
+		map("<leader>c", function()
 			vim.lsp.buf.format({
 				async = true,
 				filter = function(client)
@@ -38,6 +38,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 					return true
 				end,
 			})
-		end, "[F]ormat buffer")
+		end, "Format buffer")
 	end,
 })
