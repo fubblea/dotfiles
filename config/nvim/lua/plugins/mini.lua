@@ -1,6 +1,6 @@
-return { 
-	'nvim-mini/mini.nvim', 
-	version = '*', -- Stable
+return {
+	"nvim-mini/mini.nvim",
+	version = "*", -- Stable
 	config = function()
 		-- [[ General ]]
 		require("mini.basics").setup({
@@ -10,7 +10,7 @@ return {
 
 			mappings = {
 				windows = true,
-			}
+			},
 		})
 
 		require("mini.bracketed").setup()
@@ -18,38 +18,38 @@ return {
 		require("mini.clue").setup({
 			triggers = {
 				-- Leader triggers
-				{ mode = 'n', keys = '<Leader>' },
-				{ mode = 'x', keys = '<Leader>' },
+				{ mode = "n", keys = "<Leader>" },
+				{ mode = "x", keys = "<Leader>" },
 
 				-- Built-in completion
-				{ mode = 'i', keys = '<C-x>' },
+				{ mode = "i", keys = "<C-x>" },
 
 				-- `g` key
-				{ mode = 'n', keys = 'g' },
-				{ mode = 'x', keys = 'g' },
+				{ mode = "n", keys = "g" },
+				{ mode = "x", keys = "g" },
 
 				-- Marks
-				{ mode = 'n', keys = "'" },
-				{ mode = 'n', keys = '`' },
-				{ mode = 'x', keys = "'" },
-				{ mode = 'x', keys = '`' },
+				{ mode = "n", keys = "'" },
+				{ mode = "n", keys = "`" },
+				{ mode = "x", keys = "'" },
+				{ mode = "x", keys = "`" },
 
 				-- Registers
-				{ mode = 'n', keys = '"' },
-				{ mode = 'x', keys = '"' },
-				{ mode = 'i', keys = '<C-r>' },
-				{ mode = 'c', keys = '<C-r>' },
+				{ mode = "n", keys = '"' },
+				{ mode = "x", keys = '"' },
+				{ mode = "i", keys = "<C-r>" },
+				{ mode = "c", keys = "<C-r>" },
 
 				-- Window commands
-				{ mode = 'n', keys = '<C-w>' },
+				{ mode = "n", keys = "<C-w>" },
 
 				-- Bracketed commands
-				{ mode = 'n', keys = '[' },
-				{ mode = 'n', keys = ']' },
+				{ mode = "n", keys = "[" },
+				{ mode = "n", keys = "]" },
 
 				-- `z` key
-				{ mode = 'n', keys = 'z' },
-				{ mode = 'x', keys = 'z' },
+				{ mode = "n", keys = "z" },
+				{ mode = "x", keys = "z" },
 			},
 
 			clues = {
@@ -67,7 +67,13 @@ return {
 
 		require("mini.diff").setup()
 		require("mini.extra").setup()
-		require("mini.files").setup()
+
+		require("mini.files").setup({
+			windows = {
+				preview = true,
+			},
+		})
+
 		require("mini.git").setup()
 		require("mini.jump").setup()
 
@@ -80,14 +86,12 @@ return {
 
 		-- [[ Text Editing ]]
 		require("mini.ai").setup()
-		require("mini.completion").setup()
 		require("mini.keymap").setup()
 		require("mini.move").setup()
 		require("mini.pairs").setup()
 		require("mini.snippets").setup()
 		require("mini.splitjoin").setup()
 		require("mini.surround").setup()
-
 
 		-- [[ Appearance ]]
 		require("mini.hipatterns").setup()
@@ -98,14 +102,10 @@ return {
 		require("mini.cursorword").setup()
 
 		require("mini.indentscope").setup({
-      symbol= "|",
-      options = {
-        try_as_border = true,
-      }
-    })
-
-		require("mini.notify").setup()
-
-		
+			symbol = "|",
+			options = {
+				try_as_border = true,
+			},
+		})
 	end,
 }
