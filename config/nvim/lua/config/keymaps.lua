@@ -27,3 +27,8 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "Search 
 vim.keymap.set("n", "<leader>sg", "<cmd>Pick grep_live<cr>", { desc = "Search Grep" })
 vim.keymap.set("n", "<leader>sc", "<cmd>Pick commands<cr>", { desc = "Search Commands" })
 vim.keymap.set("n", "<leader>sv", "<cmd>Pick visit_paths<cr>", { desc = "Search Visits" })
+
+-- Aerial
+vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr, desc = "Aerial Next" })
+vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr, desc = "Aerial Previous" })
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle" })
