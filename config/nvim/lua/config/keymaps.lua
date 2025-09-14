@@ -32,3 +32,5 @@ vim.keymap.set("n", "<leader>sv", "<cmd>Pick visit_paths<cr>", { desc = "Search 
 vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr, desc = "Aerial Next" })
 vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr, desc = "Aerial Previous" })
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle" })
+
+vim.keymap.set("n", "<leader>d", "<cmd>Neogen<CR>", { desc = "Neogen" })
