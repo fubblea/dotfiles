@@ -1,14 +1,9 @@
 return {
-  -- tokyonight
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-    opts = { style = "night" },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  config = function() 
+	vim.cmd.colorscheme("tokyonight-night")
+  end
 }
