@@ -137,12 +137,5 @@ return {
 		require("mini.icons").setup()
 		require("mini.starter").setup()
 		require("mini.cursorword").setup()
-
-		require("mini.indentscope").setup({
-			symbol = "|",
-			options = {
-				try_as_border = true,
-			},
-		})
 	end,
 }
