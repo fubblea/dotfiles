@@ -63,9 +63,16 @@ return {
 				-- Custom
 				{ mode = "n", keys = "<leader>s", desc = "Search" },
 			},
+
+			window = {
+				delay = 1,
+			},
 		})
 
-		require("mini.diff").setup()
+		require("mini.diff").setup({
+			source = require("mini.diff").gen_source.none(),
+		})
+
 		require("mini.extra").setup()
 
 		require("mini.files").setup({
