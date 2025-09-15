@@ -66,6 +66,7 @@ return {
 				{ mode = "n", keys = "<leader>x", desc = "Trouble" },
 				{ mode = "n", keys = "<leader>h", desc = "Git Hunk" },
 				{ mode = "n", keys = "<leader>t", desc = "Toggle" },
+				{ mode = "n", keys = "<leader>b", desc = "Buffer" },
 			},
 
 			window = {

@@ -70,3 +70,16 @@ vim.keymap.set("n", "<leader>ci", function()
 end, { desc = "Inline chat" })
 vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { desc = "Chat Add" })
 
+-- Buffer Maps using mini.bufferline
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
+
+-- Close all other buffers except the current one
+vim.keymap.set("n", "<leader>bo", function()
+	local current = vim.api.nvim_get_current_buf()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.api.nvim_buf_is_loaded(buf) and buf ~= current then
+			vim.api.nvim_buf_delete(buf, {})
+		end
+	end
+end, { desc = "Delete Other Buffers" })
