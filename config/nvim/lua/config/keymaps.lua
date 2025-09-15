@@ -69,3 +69,4 @@ vim.keymap.set("n", "<leader>ci", function()
 	end
 end, { desc = "Inline chat" })
 vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { desc = "Chat Add" })
+

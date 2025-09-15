@@ -88,6 +88,23 @@ return {
 		require("mini.jump2d").setup()
 
 		require("mini.pick").setup()
+
+		vim.ui.select = function(items, opts, on_choice)
+			require("mini.pick").start({
+				source = {
+					items = items,
+					name = opts.prompt or "Select item",
+					show = function(item)
+						return tostring(item)
+					end,
+				},
+				choose = function(item)
+					on_choice(item, nil)
+				end,
+			})
+		end
+		vim.keymap.set("n", "<leader>st", "<cmd>TermSelect<CR>", { desc = "Search Terminal" })
+
 		require("mini.sessions").setup()
 		require("mini.visits").setup()
 		require("mini.fuzzy").setup()
