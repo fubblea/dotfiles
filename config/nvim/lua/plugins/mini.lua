@@ -64,6 +64,8 @@ return {
 				{ mode = "n", keys = "<leader>s", desc = "Search" },
 				{ mode = "n", keys = "<leader>c", desc = "CodeCompanion" },
 				{ mode = "n", keys = "<leader>x", desc = "Trouble" },
+				{ mode = "n", keys = "<leader>h", desc = "Git Hunk" },
+				{ mode = "n", keys = "<leader>t", desc = "Toggle" },
 			},
 
 			window = {
