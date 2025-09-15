@@ -17,9 +17,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- [[ Plugin Keymaps ]]
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>e", function()
 	MiniFiles.open()
-end, { desc = "Open Files" })
+end, { desc = "Files Explorer" })
 
 -- Search
 vim.keymap.set("n", "<leader>sf", "<cmd>Pick files<cr>", { desc = "Search Files" })
@@ -33,4 +33,17 @@ vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr, desc = "Aerial
 vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr, desc = "Aerial Previous" })
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle" })
 
+-- Neogen
 vim.keymap.set("n", "<leader>d", "<cmd>Neogen<CR>", { desc = "Neogen" })
+
+-- Code Completion
+vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat Toggle<CR>", { desc = "Chat" })
+vim.keymap.set("n", "<leader>ca", "<cmd>CodeCompanionActions<CR>", { desc = "Actions" })
+vim.keymap.set("n", "<leader>ci", function()
+	-- Prompt user for input
+	local prompt = vim.fn.input("CodeCompanion prompt: ")
+	if prompt ~= "" then
+		vim.cmd("CodeCompanion " .. prompt)
+	end
+end, { desc = "Inline chat" })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { desc = "Chat Add" })

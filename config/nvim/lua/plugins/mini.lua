@@ -62,6 +62,7 @@ return {
 
 				-- Custom
 				{ mode = "n", keys = "<leader>s", desc = "Search" },
+				{ mode = "n", keys = "<leader>c", desc = "AI" },
 			},
 
 			window = {

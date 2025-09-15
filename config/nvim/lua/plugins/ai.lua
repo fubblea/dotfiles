@@ -38,6 +38,12 @@ return {
 			},
 		},
 	},
+	-- GitHub Copilot
+	-- To Authenticate:
+	-- 1. Open Neovim in Windows and run :Copilot setup
+	-- 2. Copy the `app.json` from %APPDATA%/Local/github-copilot
+	-- 3. Paste the `app.json` into ~/.config/github-copilot/
+	-- (https://github.com/orgs/community/discussions/50263#discussioncomment-13079418)
 	{
 		"github/copilot.vim",
 	},
