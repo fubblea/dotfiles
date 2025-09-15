@@ -63,15 +63,12 @@ return {
 				-- Custom
 				{ mode = "n", keys = "<leader>s", desc = "Search" },
 				{ mode = "n", keys = "<leader>c", desc = "CodeCompanion" },
+				{ mode = "n", keys = "<leader>x", desc = "Trouble" },
 			},
 
 			window = {
 				delay = 1,
 			},
-		})
-
-		require("mini.diff").setup({
-			source = require("mini.diff").gen_source.none(),
 		})
 
 		require("mini.extra").setup()
@@ -82,7 +79,6 @@ return {
 			},
 		})
 
-		require("mini.git").setup()
 		require("mini.jump").setup()
 
 		require("mini.jump2d").setup()
