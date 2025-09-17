@@ -71,8 +71,9 @@ end, { desc = "Inline chat" })
 vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { desc = "Chat Add" })
 
 -- Buffer Maps using mini.bufferline
-vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "H", "<cmd>bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "L", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "<leader>bc", "<cmd>bprevious | bd#<CR>", { desc = "Close Buffer (keep split)" })
 
 -- Close all other buffers except the current one
 vim.keymap.set("n", "<leader>bo", function()
