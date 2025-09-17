@@ -71,3 +71,13 @@ vim.api.nvim_create_autocmd("QuitPre", {
 		end
 	end,
 })
+
+-- Save session on exit
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	desc = "Save session on exit",
+	callback = function()
+		local cwd = vim.fn.getcwd()
+		local session_name = cwd:match("([^/]+)$")
+		require("mini.sessions").write(session_name, { force = true })
+	end,
+})
