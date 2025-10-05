@@ -51,9 +51,6 @@
         "python.analysis": {
           "diagnosticMode": "workspace",
           "typeCheckingMode": "standard"
-        },
-        "python": {
-          "pythonPath": ".venv/bin/python"
         }
       }
     },

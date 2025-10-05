@@ -24,6 +24,7 @@
       "space s": "project_symbols::Toggle",
       "space e": "project_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
+      "space a": "outline_panel::ToggleFocus",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
