@@ -77,3 +77,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.list = false
+
+-- Show status line across all splits
+vim.o.laststatus = 3

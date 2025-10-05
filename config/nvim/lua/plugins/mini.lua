@@ -62,15 +62,16 @@ return {
 
 				-- Custom
 				{ mode = "n", keys = "<leader>s", desc = "Search" },
+				{ mode = "n", keys = "<leader>c", desc = "CodeCompanion" },
+				{ mode = "n", keys = "<leader>x", desc = "Trouble" },
+				{ mode = "n", keys = "<leader>h", desc = "Git Hunk" },
+				{ mode = "n", keys = "<leader>t", desc = "Toggle" },
+				{ mode = "n", keys = "<leader>b", desc = "Buffer" },
 			},
 
 			window = {
 				delay = 1,
 			},
-		})
-
-		require("mini.diff").setup({
-			source = require("mini.diff").gen_source.none(),
 		})
 
 		require("mini.extra").setup()
@@ -81,12 +82,28 @@ return {
 			},
 		})
 
-		require("mini.git").setup()
 		require("mini.jump").setup()
 
 		require("mini.jump2d").setup()
 
 		require("mini.pick").setup()
+
+		vim.ui.select = function(items, opts, on_choice)
+			require("mini.pick").start({
+				source = {
+					items = items,
+					name = opts.prompt or "Select item",
+					show = function(item)
+						return tostring(item)
+					end,
+				},
+				choose = function(item)
+					on_choice(item, nil)
+				end,
+			})
+		end
+		vim.keymap.set("n", "<leader>st", "<cmd>TermSelect<CR>", { desc = "Search Terminal" })
+
 		require("mini.sessions").setup()
 		require("mini.visits").setup()
 		require("mini.fuzzy").setup()
@@ -101,18 +118,23 @@ return {
 		require("mini.surround").setup()
 
 		-- [[ Appearance ]]
-		require("mini.hipatterns").setup()
+		require("mini.hipatterns").setup({
+			highlighters = {
+				-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+				fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+				hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+				todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+				note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+				-- Highlight hex color strings (`#rrggbb`) using that color
+				hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+			},
+		})
+
 		require("mini.statusline").setup()
 		require("mini.tabline").setup()
 		require("mini.icons").setup()
 		require("mini.starter").setup()
 		require("mini.cursorword").setup()
-
-		require("mini.indentscope").setup({
-			symbol = "|",
-			options = {
-				try_as_border = true,
-			},
-		})
 	end,
 }

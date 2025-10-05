@@ -17,9 +17,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- [[ Plugin Keymaps ]]
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>e", function()
 	MiniFiles.open()
-end, { desc = "Open Files" })
+end, { desc = "Files Explorer" })
 
 -- Search
 vim.keymap.set("n", "<leader>sf", "<cmd>Pick files<cr>", { desc = "Search Files" })
@@ -27,10 +27,60 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "Search 
 vim.keymap.set("n", "<leader>sg", "<cmd>Pick grep_live<cr>", { desc = "Search Grep" })
 vim.keymap.set("n", "<leader>sc", "<cmd>Pick commands<cr>", { desc = "Search Commands" })
 vim.keymap.set("n", "<leader>sv", "<cmd>Pick visit_paths<cr>", { desc = "Search Visits" })
+vim.keymap.set("n", "<leader>sh", "<cmd>Pick hipatterns<cr>", { desc = "Search Hipatterns" })
+vim.keymap.set("n", "<leader>sb", "<cmd>Pick buffers<cr>", { desc = "Search Buffers" })
+-- Keymap to pick document symbols (functions, classes, etc.) in current buffer
+vim.keymap.set("n", "<leader>ss", function()
+	require("mini.extra").pickers.lsp({ scope = "document_symbol" }, {
+		-- optional: customizations
+
+		-- `source name` shows in the picker UI, helps identify scope
+		source = { name = "Document Symbols" },
+
+		-- Optional: choose what to do when you select a symbol
+		-- e.g., jump to its location
+		-- The `on_choice` arg is passed to the picker; depends on picker implementation
+		-- For MiniExtra.lsp, I believe `choose = function(item) ... end` can be passed
+	})
+end, { desc = "Document Symbols Picker", silent = true })
+
+-- Keymap to pick workspace symbols
+vim.keymap.set("n", "<leader>sS", function()
+	require("mini.extra").pickers.lsp({ scope = "workspace_symbol" }, {
+		source = { name = "Workspace Symbols" },
+	})
+end, { desc = "Workspace Symbols Picker", silent = true })
 
 -- Aerial
 vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr, desc = "Aerial Next" })
 vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr, desc = "Aerial Previous" })
-vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>", { desc = "Aerial Toggle" })
 
+-- Neogen
 vim.keymap.set("n", "<leader>d", "<cmd>Neogen<CR>", { desc = "Neogen" })
+
+-- Code Completion
+vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat Toggle<CR>", { desc = "Chat" })
+vim.keymap.set("n", "<leader>ca", "<cmd>CodeCompanionActions<CR>", { desc = "Actions" })
+vim.keymap.set("n", "<leader>ci", function()
+	-- Prompt user for input
+	local prompt = vim.fn.input("CodeCompanion prompt: ")
+	if prompt ~= "" then
+		vim.cmd("CodeCompanion " .. prompt)
+	end
+end, { desc = "Inline chat" })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { desc = "Chat Add" })
+
+-- Buffer Maps using mini.bufferline
+vim.keymap.set("n", "H", "<cmd>bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "L", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "<leader>bc", "<cmd>bprevious | bd#<CR>", { desc = "Close Buffer (keep split)" })
+
+-- Close all other buffers except the current one
+vim.keymap.set("n", "<leader>bo", function()
+	local current = vim.api.nvim_get_current_buf()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.api.nvim_buf_is_loaded(buf) and buf ~= current then
+			vim.api.nvim_buf_delete(buf, {})
+		end
+	end
+end, { desc = "Delete Other Buffers" })
