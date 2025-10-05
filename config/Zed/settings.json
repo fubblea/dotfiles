@@ -9,6 +9,7 @@
 {
   "base_keymap": "VSCode",
   "relative_line_numbers": true,
+  "autosave": "on_focus_change",
   "diagnostics": {
     "inline": {
       "enabled": true,
